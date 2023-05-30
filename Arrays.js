@@ -89,7 +89,8 @@ console.log(total)
 numeros.sort((a, b) => b - a) // de Mayor a Menor
 console.log(numeros)
 
-
+numeros.sort((a, b) => a - b) // de Menor a Mayor
+console.log(numeros)
 
 
 

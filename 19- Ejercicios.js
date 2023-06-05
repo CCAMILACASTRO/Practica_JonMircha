@@ -125,3 +125,117 @@ return string.replace(new RegExp(patron, 'ig'), '');
 
 }
 console.log(eliminarPatron("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz"))
+console.log(eliminarPatron("a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z", '[a-z]'))
+
+//------------------------------------------------------------------------------------------------------------------//
+
+// NUMBERS:
+
+/*9) Programa una función que obtenga un numero aleatorio entre 501 y 600.*/
+
+function aleatorio() {
+    return Math.round((Math.random()*100) + 500);
+}
+console.log(aleatorio());
+
+function numeroAleatorio(min, max){
+    return Math.round(Math.random()* (max - min) + min );
+}
+console.log(numeroAleatorio(501, 600));
+
+
+/*10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro)
+, pe. miFuncion(2002) devolverá true.*/
+
+function capicua(num){
+    let nuevoNum = num.toString().split('').reverse().join('');
+    if(nuevoNum == num) return true;
+    return false 
+}
+
+console.log(capicua(232))
+console.log(capicua(132))
+
+/*11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define 
+como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120 */
+
+function factorial(numero) {
+	if (numero < 0) numero = numero * -1;  //numero*= -1
+	if (numero <= 0) return 1;
+	let factorial = 1;
+	while (numero > 1) {
+		factorial = factorial * numero;    // factorial *= numero
+		numero--;
+	}
+	return factorial;
+}
+
+function factorial2(numero){
+    if (numero < 0) numero = numero * -1; 
+	if (numero <= 0) return 1;
+    let factorial2 = 1
+    for(let i = numero; i > 1; i--){
+        factorial2 *= i;
+    }
+    return factorial2
+}
+
+console.log(factorial(5));
+console.log(factorial2(5));
+
+
+/* 12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, 
+pe. miFuncion(7) devolverá true. */
+
+function esPrimo(num){
+
+    if(num < 2) return false;
+
+    for(let i = 2; i < num; i++){
+        if(num % i === 0) return false;
+    }
+    return true;
+}
+console.log(esPrimo(5))
+console.log(esPrimo(3))
+console.log(esPrimo(4))
+
+
+/*13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar. */
+
+function parOImpar (num){
+    if(num %2 === 0) return 'Es Par';
+    return 'Es Impar'
+}
+console.log(parOImpar(28));
+console.log(parOImpar(29));
+
+
+/*14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.*/
+
+function convertirCelciusAFarenheit(celcius){
+    let resultadoFarenheit = (celcius * 9/5) +32;
+    return resultadoFarenheit + '°F';
+}
+
+function convertirFarenheitACelcius(farenheit) {
+    let resultadoCelcius = (farenheit - 32) * 5/9;
+    return resultadoCelcius + '°C'
+}
+
+console.log(convertirCelciusAFarenheit(100));
+console.log(convertirFarenheitACelcius(100));
+
+/* --En una sola sentencia ---------------------------------------------------------- */
+
+function convertirGrados(grados, unidad){
+    if(unidad === 'C'){
+        return `${grados}°C = ${Math.round((grados * (9/5)) + 32)}°F`;
+    } else if(unidad === 'F') {
+        return `${grados}°F = ${Math.round(((grados - 32) * (5/9)))}°C `
+    }
+}
+console.log(convertirGrados(100, 'C'));
+console.log(convertirGrados(100, 'F'));
+
+

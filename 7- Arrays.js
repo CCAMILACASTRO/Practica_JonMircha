@@ -92,6 +92,35 @@ console.log(numeros)
 numeros.sort((a, b) => a - b) // de Menor a Mayor
 console.log(numeros)
 
+/* .flat() => aplana un arreglo cuando tengo uno dentro de otro. */
+
+let array = [1,2,3,[4,5]]
+console.log(array.flat()) 
+
+/* flatMap() => mapea/ recorre el array y luego lo aplana. En estos ejemplos, primero envia todos los elementos que
+son diferentes a numeros y los mete en un array vacio, y luego lo aplana, se eliminan los array vacios y retorna
+el array con los elementos que son iguales a numero. */
+
+//EJ1: Devuelve en el arreglo solo los numeros
+let array2 = [1, 'a', 2, 'b', 3, 'c'];
+
+console.log(array2.flatMap(n => typeof n !== 'number' ? [] : n )) //operador ternario
+
+//EJ2: Devuelve en el arreglo solo los strings
+
+let array3 = [1, 'a', 2, 'b', 3, 'c'];
+
+console.log(array3.flatMap(str => typeof str !== 'string' ? [] : str )) // operador ternario
+
+
+
+ 
+ 
+ 
+ 
+ 
+
+
 
 
 

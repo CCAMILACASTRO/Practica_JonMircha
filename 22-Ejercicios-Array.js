@@ -345,7 +345,6 @@ console.log(arregloDeString2([1, 'a', 2, 'b', 3, 'c']));
 
 /*___________________________________________________________________________________________________________________*/
 
-
 /*21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, 
 pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25]. */
 
@@ -375,6 +374,14 @@ function numeroAltoYBajo(array){
 }
 console.log(numeroAltoYBajo([1, 4, 5, 99, -60]))
 
+/*------------------------------------------------*/
+//Otra forma corta de resolverlo:
+
+function numeroMinMax(array){
+   return (`Valor maximmo: ${Math.max(...array)}, Valor minimo: ${Math.min(...array)}`);
+}
+console.log(numeroMinMax([1, 4, 5, 99, -60]))
+
 /*23) Programa una función que dado un array de números devuelva un objeto con 2 arreglos: en el primero almacena 
 los números pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolverá {pares: [2,4,6,8,0], 
    impares: [1,3,5,7,9]}. */
@@ -395,5 +402,58 @@ los números pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9
    }
 
    console.log(arrayDeNumeros([1,2,3,4,5,6,7,8,9,0]));
+
+   /*------------------------------------------------*/
+//Otra forma corta de resolverlo:
+
+function separarParImpar(array) {
+   return ({
+      pares: array.filter(num => num %2 === 0),
+      impares: array.filter(num => num %2 === 1),
+   })
+}
+console.log(separarParImpar([1,2,3,4,5,6,7,8,9,0]))
+
+
+/* 24) Programa una función que dado un arreglo de números devuelva un objeto con dos arreglos, el primero tendrá los 
+numeros ordenados en forma ascendente y el segundo de forma descendiente, 
+pe. miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }.*/
+
+function ordenarNumeros(array){
+   return ({
+      ascendente: array.map(num => num).sort(),
+      descendente: array.map(num => num).sort().reverse(),
+   })
+
+}
+console.log(ordenarNumeros([7, 5,7,8,6]))
+
+
+/* 25) Programa una función que dado un arreglo de elementos, elimine los duplicados, 
+pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolverá ["x", 10, 2, "10", true].*/
+
+function eliminarDuplicados(array){
+
+   let newArray = [];
+
+   for(let i=0; i<array.length; i++){
+      if(!newArray.includes(array[i])){
+         newArray.push(array[i])
+      }
+   }
+   return newArray
+}
+console.log(eliminarDuplicados(["x", 10, "x", 2, "10", 10, true, true]));
+
+/* 26) Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) 
+devolverá 4.5. */
+
+function promedioNumeros(array) {
+
+   let suma = array.reduce((acumulador, num)=> acumulador + num, 0);
+   let promedio = suma / array.length;
+   return promedio;
+}
+console.log(promedioNumeros([9,8,7,6,5,4,3,2,1,0]))
 
 

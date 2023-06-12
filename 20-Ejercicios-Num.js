@@ -255,25 +255,6 @@ console.log(calcularAnios(new Date(1984,4,23)));
 
 
 
-//Recibes un arreglo de letras y numeros. Crear un nuevo arreglo que contenga solo los números del arreglo.
-
-function arregloDeNumeros(array){
-    return array.flatMap(n => typeof n !== 'number' ? [] : n )
-}
-
-console.log(arregloDeNumeros([1, 'a', 2, 'b', 3, 'c']));
-
-
-//Recibes un arreglo de letras y numeros. Crear un nuevo arreglo que contenga solo las letras del arreglo.
-
-function arregloDeString(array){
-    return array.flatMap(str => typeof str === 'string' ? str : [] )
-}
-
-console.log(arregloDeString([1, 'a', 2, 'b', 3, 'c']));
-
-
-
 
 
 

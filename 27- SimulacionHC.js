@@ -110,6 +110,8 @@ function soloNumeros(array) {
         // No debe retornar nada.
   
         // Tu código aca:
+
+        
   
         this.hobbies.push(hobby);
   
@@ -139,6 +141,8 @@ function soloNumeros(array) {
         // for(let i = 0; i < this.hobbies.length; i++){
         //   array.push(this.hobbies[i].hobby)
         // } return array;
+
+        //return this.hobbies;
   
         return Object.values(this.hobbies);
   
@@ -196,10 +200,10 @@ function soloNumeros(array) {
   
     Array.prototype.filtrar = function(cb) {
       
-      let resultado = [];
+      let resultado = [];                                 //Nuevo arreglo donde iran los elementos que dan true.  
       for(let i = 0; i < this.length; i++){
-        if(cb(this[i]) === true) resultado.push(this[i]);
-      }
+        if(cb(this[i]) === true) resultado.push(this[i]);  //Si los elementos del arreglo(this[i]) de la funcion CB
+      }                                                    // son iguales a TRUE, entonces enviarlo al nuevo arreglo.
       return resultado;
     }
   };

@@ -250,9 +250,6 @@ function devolverPrimerElemento(array) {
  
  }
  
- /* ----------------------------------------------------------------------------------
- 💪 EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT EXTRA CREDIT  EXTRA CREDIT 💪
- -------------------------------------------------------------------------------------*/
  
  function breakStatement(num) {
     // Iterar en un bucle aumentando en 2 el número recibido hasta un límite de 10 veces.
@@ -455,5 +452,15 @@ function promedioNumeros(array) {
    return promedio;
 }
 console.log(promedioNumeros([9,8,7,6,5,4,3,2,1,0]))
+
+
+function filter(arrayOfStrings) {
+   // Debes identificar todos los elementos el arreglo que comiencen con la letra "a".
+   // Luego retorna un nuevo arreglo con estos elementos.
+   // Tu código:
+
+   let newArray = arrayOfStrings.filter((elemento) => elemento[0] === 'a');
+   return newArray;
+}
 
 

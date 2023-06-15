@@ -191,8 +191,8 @@ function crearGato(nombre, edad) {
  
     let array = [];
  
-    for ( let clave in objeto) {
-       let newArray = [clave, objeto[clave]]
+    for ( let prop in objeto) {
+       let newArray = [prop, objeto[prop]]
        array.push(newArray);
     }
     return array;

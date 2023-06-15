@@ -45,7 +45,7 @@ function crearUsuario() {
     // [PISTA]: necesitarás utilizar el objeto "this".
                                                          
                                                    // El objeto 'this' hace referencia a la string que hay que invertir
-    String.prototype.reverse = function() {           //Split: convierte un string en un arreglo
+    String.prototype.reverse = function() {           //Split: convierte un string en un arreglo separado por letra
        return this.split('').reverse().join('');      // reverse: invierte los caracteres de la string
     }                                                 // Join: convierte un arreglo en string.
  

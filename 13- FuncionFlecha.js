@@ -78,11 +78,138 @@ console.log(variasLineas2(2, 4, 6));
 
 // FUNCION FLECHA CON METODOS DE ARREGLOS Y OBJETOS:
 
-const numeros = [1,2,3,4,5];
+const numeros1 = [1,2,3,4,5];
 
 numeros.forEach((num, i) => {
     console.log(num + ' esta en la posición: ' + i)
 });
+
+////********************************************************************************////
+////************************METODOS DE BUSQUEDA Y TRANSFORMACION*******************////
+////********************************************************************************////
+
+//Creamos arrays.
+
+let numeros = [50, 12, 37, 17, 25, 6]
+let animales = ['Perro', 'Gato', 'Cisne', 'Tortuga']
+let productos = [
+    {nombre: 'Mesa', precio: 3500},
+    {nombre: 'Silla de plástico', precio: 2000},
+    {nombre: 'Silla de madera', precio: 2500},
+    {nombre: 'Ventana', precio: 4500},
+    {nombre: 'Puerta', precio: 3000},
+]
+
+////// FOR.EACH = recorre el array y ejecuta lo que le digamos con cada elemento///////////
+
+numeros.forEach((numero) =>{
+    console.log(numero);  // Nos devuelve cada uno de los numeros
+})
+
+productos.forEach((producto) => {
+    console.log(producto);
+})
+
+productos.forEach((producto) => {
+    console.log(producto.nombre);  // .nombre = nos permite acceder a cada propiedad de nuestros objetos.
+    console.log(producto.precio);  // Ahora nos devuelve el nombre y el precio.
+    
+})
+
+
+////// FIND = recorre el array y retorna el primer elemendo que comple con una condicion///////////
+// Debemos crear primero una variable.
+
+let perro = animales.find((animal) => {
+    return animal === 'Perro';
+})
+console.log(perro);
+
+////// FILTER = recorre el array y retorna un nuevo array con todos los elementos que cumplan con una condición/////
+
+let gato = animales.filter((animal) => {
+    return animal === 'Gato';
+})
+
+console.log(gato);
+
+let mayorQueTreinta = numeros.filter((numero) => {
+    return numero > 30;
+})
+
+console.log(mayorQueTreinta);
+
+
+for(let i = 0; i < numeros.length ; i++){
+    mayorAVeinte = numeros.filter((numero) => {
+        return numero > 20;
+    })        
+        
+}
+console.log(mayorAVeinte);
+
+
+
+
+let silla = productos.filter((producto) => {
+    return producto.nombre.includes('Silla');
+})
+
+console.log(silla);
+
+
+////// SOME = recorre el array y retorna TRUE o FALSE segun si encuentra o no un elemento que cumpla con una condicion//
+
+let cisne = animales.some((animal) => {
+    return animal === 'Cisne';
+})
+console.log(cisne);
+
+
+let caballo = animales.some((animal) => animal === 'Caballo'); // FORMA ABREVIADA DE HACER LA FUNCION FLECHA.
+console.log(caballo);
+
+
+////// MAP = recorre el array y retorna uno nuevo con los elementos transformados del array original//
+
+let nombreDeProductos = productos.map((producto) => producto.nombre); // FUNCION SIMPLE XQ HAY 1 PARAMETRO Y 1 SENTENCIA.
+console.log(nombreDeProductos)
+
+let preciosActualizados = productos.map((producto)=> {
+    return {
+        nombre: producto.nombre,
+        precio: producto.precio * 1.5
+    }
+})
+console.log(preciosActualizados); 
+
+
+////// REDUCE = recorre el array y retorna un unico valor tras hacer una operacion sobre los elementos.////////
+
+let total = numeros.reduce((acumulador, numero) => acumulador + numero, 0);
+console.log(total);
+
+
+let totalNumeros = 0
+for (let i = 0; i < numeros.length; i++) {
+    totalNumeros = totalNumeros + numeros[i];
+}
+console.log(totalNumeros)
+
+let totalNumeros1 = 0
+for (let i = 0; i < numeros.length; i++) {
+    totalNumeros1 = numeros.reduce((acumulador, numero) => acumulador + numero, 0);
+}
+console.log(totalNumeros1)
+
+
+////// SORT = recorre el array y ordena segun el criterio que le indiquemos. Transforma el array original//
+
+// let menorAMayor = numeros.sort((a, b) => a - b);
+// console.log(menorAMayor);
+
+let mayorAMenor = numeros.sort((a, b) => a + b);
+console.log(mayorAMenor);
 
 
 

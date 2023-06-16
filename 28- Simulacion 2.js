@@ -1,3 +1,7 @@
+//-------------------------------------------------------------------------------------------------------------------//
+//****************************************  EJERCICIOS DE SIMULACION   *********************************************//
+//----------------------------------------------HENRY CHALLENGE----------------------------------------------------//
+
 function mayorMenosMenor(arr) {
     // Obtener del array "arr" el número mayor y el menor. Devuelve la resta entre los mismos
     // NOTA: No utilizar los métodos "min" y "max" de "Math".
@@ -17,6 +21,7 @@ function mayorMenosMenor(arr) {
       }
     }  
     return numeroMayor-numeroMenor;
+
   };
 
 function ingredienteEnMalEstado(menu, comida, ingrediente) {
@@ -39,16 +44,15 @@ function ingredienteEnMalEstado(menu, comida, ingrediente) {
     // Tu código:
 
     var newArray=[];
-        for (let i=0; i<menu[comida].length; i++){
+        for (let i = 0; i < menu[comida].length; i++){
             if (menu[comida][i] === menu[comida][ingrediente]){
                 newArray.push(menu[comida][i], menu[comida][i+1], menu[comida][i-1]);
             } else{
                 return "El menú está perfecto";
             }
         }
-        return newArray;
-       
-  }
+        return newArray;   
+  };
 
 
   function bienvenidoSr(persona) {
@@ -70,7 +74,7 @@ function ingredienteEnMalEstado(menu, comida, ingrediente) {
     //
     // Tu código:
 
-    var keysPersona = Object.keys(persona);
+  var keysPersona = Object.keys(persona);
   var valuePersona = Object.values(persona);
   var tieneNombre = keysPersona.includes("nombre");
   var indexNombre = keysPersona.indexOf("nombre")
@@ -89,14 +93,7 @@ function ingredienteEnMalEstado(menu, comida, ingrediente) {
     return "Disculpe señor, no está invitado a la fiesta"
   }
 
-
-}
-
-
-  // if(Object.keys(invitado) && Object.keys(nombre) && Object.keys(apellido)) return `${nombre} ${apellido}, un gusto tenerlo nuevamente! Bienvenido `
-  // if(Object.keys(invitado) && Object.keys(apellido)) return `Bienvenido Sr. ${apellido}`
-  // if(Object.keys(invitado) && Object.keys(nombre)) return `Hola ${nombre}, tu mesa está lista`
-  // if(! Object.keys(invitado)) return `Disculpe señor, no está invitado a la fiesta`; 
+};
 
 
   function obtenerSoloLosMejores(estudiantes, nota1, nota2) {
@@ -111,24 +108,12 @@ function ingredienteEnMalEstado(menu, comida, ingrediente) {
     ] */
     // obtenerSoloLosMejores(estudiantes, 15, 15); retorna => ["Fulanito Rodriguez", "Perengano Leiria"];
     //
-    // Tu código:
-  
-    var nuevoArray=[]
-    var keys =[]
-    var values = []
-    var alumno =null;
-    for( i=0;i< estudiantes.lenght;i++){
-      keys = Object.keys(estudiantes[i])
-      values = Object.values(estudiantes[i])
-      
-      if (values[2]>=nota1 && values[3 >= nota2]){
-  
-        alumno = values[0]+" "+values[1];
-        nuevoArray.push(alumno);
-      }
-    }
-    return nuevoArray;
-  }
+    // Tu código:  
+
+  let estudiantesFiltrados = estudiantes.filter(estudiante => estudiante.check1 >= nota1 && estudiante.check2 >= nota2);
+  let resultado = estudiantesFiltrados.map(estudiante => `${estudiante.nombre} ${estudiante.apellido}`);
+  return resultado;
+};
 
   function buscaDestruye(arreglo, num) {
     // La funcion 'buscaDestruye' recibe como argumento un array de enteros 'arreglo' y un entero 'num'.
@@ -236,7 +221,7 @@ function ingredienteEnMalEstado(menu, comida, ingrediente) {
     };
   
     return Alumno;
-  }
+  };
 
   function intercambio(objeto) {
     // Devolver un objeto con los pares clave-valor intercambiados.
@@ -244,31 +229,14 @@ function ingredienteEnMalEstado(menu, comida, ingrediente) {
     // NOTA: No utilizar métodos de Object (values, keys, entries);
     //
     // Tu código:
-  
-    var keys = []
-    var values = []
-    var nuevoObjeto = {};
-    for (var prop in objeto){
-  
-      keys.push (prop);
-      values.push(objeto[prop]);
-    
-    }
-    for (i = 0 ; i < keys.length;i++){
-      nuevoObjeto[values[i]] = keys[i];
-    }
-  
-    return  nuevoObjeto;
-  }
 
-//   function intercambio(objeto){
-//     let nuevoObjeto = {};
-//     for ( let propiedad in objeto){
-//         nuevoObjeto[objeto[propiedad]]=propiedad;
-//     }
-//     return nuevoObjeto;
+      let nuevoObjeto = {};
+      for ( let propiedad in objeto){
+          nuevoObjeto[objeto[propiedad]]=propiedad;
+      }
+      return nuevoObjeto;
+  };
 
-// }
 
   function soloNumeros(array) {
     // La funcion llamada 'soloNumeros' recibe como argumento un arreglo de enteros y strings llamado 'array'.
@@ -321,6 +289,7 @@ function ingredienteEnMalEstado(menu, comida, ingrediente) {
     // checkInventario(inventario, 'tenedor') devuelve => 6
   
     // Tu código aca:
+
     for(let i = 0 ; i < inventario.length; i++){
       if(inventario[i].nombre === item){
         return(inventario[i].cantidad)
@@ -328,7 +297,7 @@ function ingredienteEnMalEstado(menu, comida, ingrediente) {
       return 0
     }
   }
-}
+};
 
 function index() {
   // Escribi una función encontraIndex en el prototipo de Arrays,
@@ -379,15 +348,12 @@ function cuantosRepetidos(array, elemento) {
     }
   }
  return nuevoArray;
-}
+};
 
 
 // Crea una funcion que sume los numeros de dos arrays indice por indice:
 
 function sumarNumerosArrays(array1, array2){
-
-// let array1 = [1, 2, 3, 4, 5]
-// let array2 = [6, 7, 8, 9, 10]
 
 let resultado = []
 
@@ -398,8 +364,7 @@ for(let i = 0; i < menorLongitud; i++){
 }
 return resultado;
 
-}
-console.log(sumarNumerosArrays([1, 2, 3, 4, 5], [6, 7, 8, 9, 10]))
+};
 
 
 // Eliminar un dato especifico de un arreglo con indexOf() y splice()
@@ -415,16 +380,17 @@ function eliminarNumero(array){
 }
 console.log(eliminarNumero([1, 2, 3, 4, 5, 6]))
 
-//// Funcion que reciba un arreglo de entero y retor el num que mas se repite
+// Funcion que reciba un arreglo de entero y retorne el numero que mas se repite
 
 function masFrecuente(numeros){
+
   let conteo= {};
   let enteroMasFrecuente;
   let maximoConteo=0;
-  for (let i=0;i<numeros.length;i++){
+  for (let i = 0; i < numeros.length; i++){
       let entero = numeros[i];
       if (conteo[entero]===undefined){
-          conteo[entero]=1;
+          conteo[entero] = 1;
 
       }else{
           conteo[entero]++;
@@ -441,7 +407,7 @@ function masFrecuente(numeros){
 
 function mismaCantidadCaracteres(strings, caracteres) {
     
-  const resultados = [];
+let resultados = [];
 
 for (let str of strings) {
   if (str.length === caracteres) {
@@ -455,7 +421,9 @@ return resultados;
 // Crear una funcion que sume los numeros primos de un arreglo de enteros
 
 function sumaTodosPrimos(numeros){
-  let suma = 0;
+  
+let suma = 0;
+
 function esPrimo(numeros){
   if (numeros < 2 ){
       return false;
@@ -548,6 +516,19 @@ function vegan(invitados) {
     }
 
 }
+
+
+// Verificar cuantos usuarios estan online. 
+
+function cuantosOnline(usuarios){
+  let contador = 0;
+  for (let usuario in usuarios){
+      if (usuarios[usuario].online === true){
+          contador++;
+      }
+  }
+  return contador;
+  }
 
 
 

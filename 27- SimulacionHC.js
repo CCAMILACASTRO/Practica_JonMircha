@@ -18,8 +18,8 @@ function soloNumeros(array) {
     }
     return numeros;
   
-  }
-  console.log(soloNumeros([1, 'Henry', 2]))
+  };
+  
 
   function stringMasLarga(strings) {
     // La función llamada 'stringMasLarga', recibe como argumento un arreglo de strings llamado 'strings'
@@ -100,7 +100,8 @@ function soloNumeros(array) {
   function crearClasePersona() {
     class Persona {
       constructor(nombre, edad, hobbies, amigos) {
-        // El constructor de la clase Persona recibe nombre (string), edad (integer), hobbies (array de strings), amigos (array de objetos)
+        // El constructor de la clase Persona recibe nombre (string), edad (integer), hobbies (array de strings), 
+        //amigos (array de objetos).
         // Inicializar las propiedades de la persona con los valores recibidos como argumento
   
         // Tu código aca:
@@ -249,19 +250,15 @@ function soloNumeros(array) {
 
     let numero = string.split('');
     for(let i = 0; i < numero.length; i++){
-        if(parseInt(numero[i]) < 5){
-            numero[i] = 0;
+        if(parseInt(numero[i]) < 5){        //como numero es un string, usa el PARSEINT para convertirlo en numero 
+            numero[i] = 0;                 //  y poder compararlo con el numero 5.
         } else {
             numero[i] = 1
         }
     }
     return numero.join('')
 
-  }
-
-  console.log(fakeBinary2('5627'))
-  console.log(fakeBinary2('729'))
-
+  };
 
   function loboEstaONoEsta(array) {
     // La funcion recibe un array 'array' de strings y numeros  como parametro
@@ -285,7 +282,7 @@ function soloNumeros(array) {
     //         return false;
     //     }
     // }    
-}
+};
 
 function pedirComida(array) {
   // la funcion recibe un array de objetos en donde se detalla nombre y tipo de dieta de los integrantes de un meeting
@@ -310,12 +307,7 @@ function pedirComida(array) {
       vegan: vegan,
       standar: standar
   }
-}
-
-console.log(pedirComida([
-{nombre: "Harry", dieta: "standard"}, 
-{nombre: "Luna", dieta: 'vegan'}, 
-{nombre: "Goyle", dieta: "standard"}]))
+};
 
 function cuantosMenores(invitados) {
   // La funcion llamada recibe como argumento un objeto 'invitados', en el objeto tenemos objetos que representan los invitados
@@ -349,13 +341,7 @@ function cuantosMenores(invitados) {
   
 return menores;
 
-}
-console.log(cuantosMenores({
-  Luna: {edad: 25},
-  Sebas: {edad: 7},
-  Marce: {edad: 34},
-  Nicky: {edad: 15}
-}))
+};
 
 
 function crearClaseMascota() {
@@ -431,7 +417,7 @@ function crearClaseMascota() {
   }
 
   return Mascota;
-}
+};
 
 function menorMayor(numeros){
   // La función llamada 'menorMayor' recibe como argumento un arreglo de números llamado 'numeros' y debe devolver un
@@ -440,7 +426,7 @@ function menorMayor(numeros){
   // Ej:
   // menorMayor([4, 6, 1, 7, 15]) debe retornar [1, 15]
   // ya que 1 es el número más chico (menor) dentro del arreglo [4, 6, 1, 7, 15]
-  // y 15 es el número más grande (mayor) dentro del arreglo [4, 6, 1, 7, 1 5]
+  // y 15 es el número más grande (mayor) dentro del arreglo [4, 6, 1, 7, 15]
 
   // Tu código aca:
 //let numeros = [4, 6, 1, 7, 15];
@@ -456,7 +442,8 @@ for (let i = 0; i<numeros.length; i++) {
   }
 }
   return [min,max];
-}
+};
+
 
 function actividadesEnComun(persona1, persona2) {
   // La funcion llamada 'actividadesEnComun' recibe como argumento dos arrays de actividades (strings) llamados 'persona1' y 'persona2'
@@ -474,9 +461,7 @@ function actividadesEnComun(persona1, persona2) {
     }
   }
   return nuevoArray;
-}
-
-console.log(actividadesEnComun(['leer', 'comer', 'pasear', 'dormir', 'jugar'], ['comer', 'dormir', 'futbol']))
+};
 
 function repetirCaracteres(texto) {
   // Escribi una funcion llamada 'repeatCharacters' en el prototypo del objeto global String
@@ -486,11 +471,13 @@ function repetirCaracteres(texto) {
   // 'hola'.repeatCharacters() devuelve "hhoollaa"
 
   // Tu código aca:
-  const letters = texto.split('')
-  const repeated = letters.map(letter => letter.repeat(2))
-  return repeated.join('')
 
-}
+    let letras = texto.split('');
+    let letrasRepetidas = letras.map((letra) => letra.repeat(2))
+    return letrasRepetidas.join('');
+    
+  
+};
 
 function palabraMasLarga(array) {
   // La funcion llamada 'palabraMasLarga' recibe un array 'array' de frases (strings) como parametro
@@ -499,15 +486,18 @@ function palabraMasLarga(array) {
   // palabraMasLarga(['hola esto string', 'frase con palabra']) debe devolver 'palabra'
 
   // Tu código aca:
-  let palabras = str.split(" ");
-  let masLarga = "";
-  for (let palabra of palabras){
-    if (palabra.length > masLarga.length){
-      masLarga = palabra;
+
+  let palabras = array.join(' ')  
+  let palabra = palabras.split(' ')
+  let masLarga = []
+  for(let i = 0; i < palabra.length; i++){
+    if(palabra[i].length > masLarga.length){
+      masLarga = palabra[i]
     }
   }
-  return masLarga
-}
+  return masLarga;
+
+};
 
 
 

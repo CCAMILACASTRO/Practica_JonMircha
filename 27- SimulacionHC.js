@@ -433,5 +433,50 @@ function crearClaseMascota() {
   return Mascota;
 }
 
+function menorMayor(numeros){
+  // La función llamada 'menorMayor' recibe como argumento un arreglo de números llamado 'numeros' y debe devolver un
+  // arreglo que contenga el menor número del arreglo 'numeros' en la posición cero y el mayor número del arreglo
+  // 'numeros' en la posición 1.
+  // Ej:
+  // menorMayor([4, 6, 1, 7, 15]) debe retornar [1, 15]
+  // ya que 1 es el número más chico (menor) dentro del arreglo [4, 6, 1, 7, 15]
+  // y 15 es el número más grande (mayor) dentro del arreglo [4, 6, 1, 7, 1 5]
+
+  // Tu código aca:
+//let numeros = [4, 6, 1, 7, 15];
+
+let min = numeros[0];
+let max = numeros[0];
+for (let i = 0; i<numeros.length; i++) {
+  if(min > numeros[i]){
+    min = numeros[i]
+  }
+  if(max < numeros[i]){
+    max = numeros[i]
+  }
+}
+  return [min,max];
+}
+
+function actividadesEnComun(persona1, persona2) {
+  // La funcion llamada 'actividadesEnComun' recibe como argumento dos arrays de actividades (strings) llamados 'persona1' y 'persona2'
+  // y debe devolver un array de strings con las actividades en comun ( aquellas que se repiten ) entre cada array.
+  // ej: persona1 = ['leer', 'comer', 'pasear', 'dormir', 'jugar']
+  //     persona2 = ['comer', 'dormir', 'futbol']
+  // actividadesEnComun(persona1, persona2) => ['comer', 'dormir']
+  // Tip: podes usar ciclos for anidados.
+  // Tu código aca:
+
+  let nuevoArray = [];
+  for (var i = 0; i < persona1.length; i++) {
+    if (persona2.includes(persona1[i]) && ! nuevoArray.includes(persona1[i])) {
+    nuevoArray.push(persona1[i])
+    }
+  }
+  return nuevoArray;
+}
+
+console.log(actividadesEnComun(['leer', 'comer', 'pasear', 'dormir', 'jugar'], ['comer', 'dormir', 'futbol']))
+
 
 

@@ -97,39 +97,6 @@ function ingredienteEnMalEstado(menu, comida, ingrediente) {
   // if(Object.keys(invitado) && Object.keys(apellido)) return `Bienvenido Sr. ${apellido}`
   // if(Object.keys(invitado) && Object.keys(nombre)) return `Hola ${nombre}, tu mesa está lista`
   // if(! Object.keys(invitado)) return `Disculpe señor, no está invitado a la fiesta`; 
-  
-
-
-  function obtenerSoloLosMejores(estudiantes, nota1, nota2) {
-    // "estudiantes" es un array de objetos "estudiante". Crea un nuevo array con el nombre y apellido de los estudiantes
-    // que en sus propiedades "check1" y "check2", tengan una nota mayor o igual a "nota1" y "nota2" respectivamente.
-    // Ej:
-    /* var estudiantes = [
-        { nombre: "Mengano", apellido: "Solis", check1: 16, check2: 8},
-        { nombre: "Fulano", apellido: "Rodriguez", check1: 20, check2: 20},
-        { nombre: "Zutano", apellido: "Alvarez", check1: 10, check2: 0},
-        { nombre: "Perengano", apellido: "Leiria", check1: 17, check2: 19}
-    ] */
-    // obtenerSoloLosMejores(estudiantes, 15, 15); retorna => ["Fulanito Rodriguez", "Perengano Leiria"];
-    //
-    // Tu código:
-  
-    var nuevoArray=[]
-    var keys =[]
-    var values = []
-    var alumno =null;
-    for( i=0;i< estudiantes.lenght;i++){
-      keys = Object.keys(estudiantes[i])
-      values = Object.values(estudiantes[i])
-      
-      if (values[2]>=nota1 && values[3 >= nota2]){
-  
-        alumno = values[0]+" "+values[1];
-        nuevoArray.push(alumno);
-      }
-    }
-    return nuevoArray;
-  };
 
 
   function obtenerSoloLosMejores(estudiantes, nota1, nota2) {
@@ -294,6 +261,15 @@ function ingredienteEnMalEstado(menu, comida, ingrediente) {
     return  nuevoObjeto;
   }
 
+//   function intercambio(objeto){
+//     let nuevoObjeto = {};
+//     for ( let propiedad in objeto){
+//         nuevoObjeto[objeto[propiedad]]=propiedad;
+//     }
+//     return nuevoObjeto;
+
+// }
+
   function soloNumeros(array) {
     // La funcion llamada 'soloNumeros' recibe como argumento un arreglo de enteros y strings llamado 'array'.
     // Debe devolver un arreglo con solo los enteros.
@@ -381,7 +357,7 @@ function index() {
 });
 };
 
-console.log(index([5, 6, 4, 65, 8, 4]))
+
 
 function cuantosRepetidos(array, elemento) {
   // La funcion llamada 'cuantosRepetidos' recibe como argumento un array de arrays llamado 'array' y un string llamado 'elemento'
@@ -404,6 +380,178 @@ function cuantosRepetidos(array, elemento) {
   }
  return nuevoArray;
 }
+
+
+// Crea una funcion que sume los numeros de dos arrays indice por indice:
+
+function sumarNumerosArrays(array1, array2){
+
+// let array1 = [1, 2, 3, 4, 5]
+// let array2 = [6, 7, 8, 9, 10]
+
+let resultado = []
+
+let menorLongitud = Math.min(array1.length, array2.length) // determina el numero maximo de iteracion
+
+for(let i = 0; i < menorLongitud; i++){
+  resultado.push(array1[i] + array2[i])
+}
+return resultado;
+
+}
+console.log(sumarNumerosArrays([1, 2, 3, 4, 5], [6, 7, 8, 9, 10]))
+
+
+// Eliminar un dato especifico de un arreglo con indexOf() y splice()
+
+function eliminarNumero(array){
+  
+  let datoAEliminar = 3;
+
+  let indice = array.indexOf(datoAEliminar);
+  if(indice >= 0) {
+    array.splice(indice, 1)
+  } return array;
+}
+console.log(eliminarNumero([1, 2, 3, 4, 5, 6]))
+
+//// Funcion que reciba un arreglo de entero y retor el num que mas se repite
+
+function masFrecuente(numeros){
+  let conteo= {};
+  let enteroMasFrecuente;
+  let maximoConteo=0;
+  for (let i=0;i<numeros.length;i++){
+      let entero = numeros[i];
+      if (conteo[entero]===undefined){
+          conteo[entero]=1;
+
+      }else{
+          conteo[entero]++;
+      }
+      if(conteo[entero ]> maximoConteo){
+          enteroMasFrecuente = entero;
+          maximoConteo = conteo[entero];
+      }
+  }
+  return enteroMasFrecuente;
+}
+
+// Evaluar si tienen la misma cantiad de caracteres
+
+function mismaCantidadCaracteres(strings, caracteres) {
+    
+  const resultados = [];
+
+for (let str of strings) {
+  if (str.length === caracteres) {
+    resultados.push(str);
+  }
+}
+
+return resultados;
+}
+
+// Crear una funcion que sume los numeros primos de un arreglo de enteros
+
+function sumaTodosPrimos(numeros){
+  let suma = 0;
+function esPrimo(numeros){
+  if (numeros < 2 ){
+      return false;
+  }
+for (let i = 2 ; i <= Math.sqrt(numeros); i++){
+  if (numeros % i === 0){
+      return false;
+
+  }
+}
+return true;
+}
+for(let i = 0;i < numeros.length; i++){
+  if (esPrimo(numeros[i])){
+      suma += numeros[i];
+  }
+}
+return suma;
+}
+
+
+// Crear una funcion que cuente la cantidad de invitados son vegan.
+/*  let invitado = { 
+  luna: { vegan: false },
+  sebas:{ vegan:false},
+  marce: {vegan: false},
+  nicky:{vegan: true}*/
+
+function vegan(invitados) {
+    
+  let contador = 0;
+  for (let invitado in invitados ){
+      if (invitados[invitado].vegan === true){
+          contador++;
+      }
+  }
+  return contador;
+  }
+
+  //Crear la clase Emprendedor:
+
+  class Emprendedor {
+    // Inicializar las propiedades del emprendedor con los valores recibidos como argumento
+    // tu código aquí
+    constructor(nombre, apellido, libros, mascotas) {
+      this.nombre = nombre;
+      this.apellido = apellido;
+      this.libros = libros;
+      this.mascotas = mascotas;  
+    
+        
+    }
+
+    getNombreCompleto(){
+      // Retorna un string conteniendo nombre y apellido del emprendedor
+      // tu código aquí
+
+        return `${this.nombre} ${this.apellido}`;
+
+    }
+
+    addMascota(mascota) {
+      // Agrega una mascota al arreglo de mascotas
+     // tu código aquí
+        this.mascotas.push(mascota);
+        
+    }
+
+    countMascotas() {
+      // Retorna la cantidad de mascotas del emprendedor
+        // tu código aquí
+        return this.mascotas.length;
+    }
+
+    addLibro(titulo, autor) {
+          // Agregar un objeto: { titulo: titulo, autor: autor }
+        // al arreglo de libros.
+        // tu código aquí
+        
+
+        this.libros.push( {titulo, autor});
+    
+    }
+
+    getLibros() {
+      // Retorna un arreglo con los títulos de todos los libros en el arreglo de libros
+      // tu código aquí
+        
+        return this.libros.map((libros) => libros.titulo);
+    }
+
+}
+
+
+
+
 
 
 

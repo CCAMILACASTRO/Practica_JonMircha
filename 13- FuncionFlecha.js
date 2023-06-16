@@ -150,7 +150,6 @@ console.log(mayorAVeinte);
 
 
 
-
 let silla = productos.filter((producto) => {
     return producto.nombre.includes('Silla');
 })

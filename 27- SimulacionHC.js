@@ -478,5 +478,36 @@ function actividadesEnComun(persona1, persona2) {
 
 console.log(actividadesEnComun(['leer', 'comer', 'pasear', 'dormir', 'jugar'], ['comer', 'dormir', 'futbol']))
 
+function repetirCaracteres(texto) {
+  // Escribi una funcion llamada 'repeatCharacters' en el prototypo del objeto global String
+  // que reciba como parametro un string
+  // y devuelve un string en donde cada letra se repita una vez.
+  // Por ej:
+  // 'hola'.repeatCharacters() devuelve "hhoollaa"
+
+  // Tu código aca:
+  const letters = texto.split('')
+  const repeated = letters.map(letter => letter.repeat(2))
+  return repeated.join('')
+
+}
+
+function palabraMasLarga(array) {
+  // La funcion llamada 'palabraMasLarga' recibe un array 'array' de frases (strings) como parametro
+  // y debe devolver la palabra mas larga entre todas las frases ( Es decir la palabra con mayor cantidad de caracteres)
+  // Por ej:
+  // palabraMasLarga(['hola esto string', 'frase con palabra']) debe devolver 'palabra'
+
+  // Tu código aca:
+  let palabras = str.split(" ");
+  let masLarga = "";
+  for (let palabra of palabras){
+    if (palabra.length > masLarga.length){
+      masLarga = palabra;
+    }
+  }
+  return masLarga
+}
+
 
 

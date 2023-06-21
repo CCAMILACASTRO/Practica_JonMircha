@@ -55,6 +55,7 @@ function devolverString(string) {
     return nuevaString;
    
  }
+ console.log(asAmirror("The Henry Challenge is close!"))
 
  function deleteAbc(string) {
     // Tu tarea es eliminar las letras "a", "b" y "c" del string recibido.
@@ -72,6 +73,7 @@ function devolverString(string) {
     return newString;
  }
 
+ console.log(deleteAbc('basica'))
 
 
 /*1) Programa una función que cuente el número de caracteres de una cadena de texto, 

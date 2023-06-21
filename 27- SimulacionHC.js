@@ -305,7 +305,7 @@ function pedirComida(array) {
   }
   return {
       vegan: vegan,
-      standar: standar
+      standard: standard
   }
 };
 
@@ -429,19 +429,18 @@ function menorMayor(numeros){
   // y 15 es el número más grande (mayor) dentro del arreglo [4, 6, 1, 7, 15]
 
   // Tu código aca:
-//let numeros = [4, 6, 1, 7, 15];
 
-let min = numeros[0];
-let max = numeros[0];
+
+let numeroMenor = numeros[0];
+let numeroMayor = numeros[0];
 for (let i = 0; i<numeros.length; i++) {
-  if(min > numeros[i]){
-    min = numeros[i]
-  }
-  if(max < numeros[i]){
-    max = numeros[i]
+  if(numeros[i] < numeroMenor){
+    numeroMenor = numeros[i]
+  } else if (numeros[i] > numeroMayor){
+    numeroMayor = numeros[i]
   }
 }
-  return [min,max];
+  return [numeroMenor, numeroMayor];
 };
 
 
@@ -454,14 +453,25 @@ function actividadesEnComun(persona1, persona2) {
   // Tip: podes usar ciclos for anidados.
   // Tu código aca:
 
-  let nuevoArray = [];
-  for (var i = 0; i < persona1.length; i++) {
-    if (persona2.includes(persona1[i]) && ! nuevoArray.includes(persona1[i])) {
-    nuevoArray.push(persona1[i])
+  let nuevoArray = []
+
+  persona1.forEach(comparar);
+  function comparar(item){
+    if(persona2.includes(item) && (nuevoArray.includes(item) === false)){
+      nuevoArray.push(item)
     }
   }
-  return nuevoArray;
+  return nuevoArray
+
+  // let nuevoArray = [];
+  // for (var i = 0; i < persona1.length; i++) {
+  //   if (persona2.includes(persona1[i]) && ! nuevoArray.includes(persona1[i])) {
+  //   nuevoArray.push(persona1[i])
+  //   }
+  // }
+  // return nuevoArray;
 };
+
 
 function repetirCaracteres(texto) {
   // Escribi una funcion llamada 'repeatCharacters' en el prototypo del objeto global String
@@ -498,6 +508,17 @@ function palabraMasLarga(array) {
   return masLarga;
 
 };
+
+function buscandoAWally(personajes) {
+  //Recibes un arreglo de String, y debes retornar la string 'He encontrado a Wally en la posicion: '
+
+  for(let i = 0; i < personajes.length; i++){
+    if(personajes[i] === 'Wally'){
+      return `He encontrado a ${personajes[i]} en la posicion ${i}`
+    }
+  }
+}
+
 
 
 

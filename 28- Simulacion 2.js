@@ -81,18 +81,17 @@ function ingredienteEnMalEstado(menu, comida, ingrediente) {
   var tieneApellido = keysPersona.includes("apellido");
   var indexApellido = keysPersona.indexOf("apellido")
   var tieneInvitacion = keysPersona.includes("invitado")
+  var noTieneInvitacion = persona.invitado === false
   
-  
-  if (tieneNombre && tieneApellido && tieneInvitacion){
+  if(noTieneInvitacion){
+    return "Disculpe señor, no está invitado a la fiesta"
+  } else if (tieneNombre && tieneApellido && tieneInvitacion){
      return `${valuePersona[indexNombre]} ${valuePersona[indexApellido]}, un gusto tenerlo nuevamente! Bienvenido`
   } else if (tieneNombre && !tieneApellido && tieneInvitacion){
     return `Hola ${valuePersona[indexNombre]}, tu mesa está lista`
   } else if (!tieneNombre && tieneApellido && tieneInvitacion){
     return `Bienvenido Sr. ${valuePersona[indexApellido]}`
-  } else if ( !tieneInvitacion){
-    return "Disculpe señor, no está invitado a la fiesta"
-  }
-
+  } 
 };
 
 

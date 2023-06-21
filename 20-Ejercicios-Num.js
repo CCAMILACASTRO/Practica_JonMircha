@@ -97,12 +97,9 @@ function suma(x, y) {
        }
     }
     return res;
- }
+ };
 
- 
-
-
-/*9) Programa una función que obtenga un numero aleatorio entre 501 y 600.*/
+ /*9) Programa una función que obtenga un numero aleatorio entre 501 y 600.*/
 
 function aleatorio() {
     return Math.round((Math.random()*100) + 500);
